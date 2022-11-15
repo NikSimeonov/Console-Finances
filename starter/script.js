@@ -16,12 +16,12 @@ var averageChange = Math.round(totalProfitLosses / totalMonths);
 
 //4 Greatest increase in profits (month and amount) over the entire period.
 var greatestIncrease = finances.reduce((previous, current) => {
-  return current[0] > previous[0] ? current : previous
+  return current[1] > previous[1] ? current : previous
 });
   
 //5 Greatest decrease in losses (month and amount) over the entire period.
 var greatestDecrease = finances.reduce((previous, current) => {
-  return current[0] < previous[0] ? current : previous
+  return current[1] < previous[1] ? current : previous
 });
 
 }
@@ -31,5 +31,5 @@ console.log('---------------------------------');
 console.log('Total Months:' + ' ' + finances.length);
 console.log('Total:' + ' ' + '$' + totalProfitLosses);
 console.log('Average  Change ' + '$' + averageChange);
-console.log('Greatest Increase in Profits:' + greatestIncrease);
-console.log('Greatest Decrease in Profits:' + greatestDecrease);
+console.log('Greatest Increase in Profits:' + '  ' + greatestIncrease[0] + ' ' + '($'+greatestIncrease[1] + ')');
+console.log('Greatest Decrease in Profits:' + '  ' + greatestDecrease[0] + ' ' + '($'+greatestDecrease[1] + ')');
